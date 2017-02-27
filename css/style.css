@@ -35,3 +35,7 @@ ul.menu li > a
 ul.menu li > a:hover {
 	text-decoration:underline;
 }
+
+.menubtn {
+	cursor:pointer;
+}
