@@ -4,7 +4,7 @@
 
         // T01Z02 - tydzien 1, zadanie 2
 
-       var allDivGrid = $("div.grid.grid-12"); // wszytskie elementy mające zarówno klasę grid i grid-12
+       var allDivGrid = $("div.grid.grid-12"); // wszystkie elementy mające zarówno klasę grid i grid-12
 
        var externalLinks = $(".nav a[href^='http']"); // wszystkie linki kierujące na zewnątrz zawierające się w elemencie o klasie nav
 
@@ -19,7 +19,13 @@
 
 
 
-        allDivGrid.hl();
+        //allDivGrid.hl();
+
+        //T01Z03
+        
+        $(".menubtn").click(function(){
+          $(".nav").toggle("slow");
+        });        
 
     });
 
