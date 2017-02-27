@@ -23,7 +23,7 @@
 
         //T01Z03
         
-        $(".menubtn").click(function(){
+        $(".menubtn").on("click", function(){
           $(".nav").toggle("slow");
         });        
 
