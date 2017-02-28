@@ -23,9 +23,32 @@
 
         //T01Z03
         
-        $(".menubtn").on("click", function(){
+        $(".menu-btn").on("click", function(){
+
           $(".nav").toggle("slow");
-        });        
+
+        }); 
+
+        //T01Z04
+        
+        $("#name-form .add-btn").click(function(){ 
+          
+            // $( "form" ).submit(function( event ) {
+            //   event.preventDefault();
+            // });                       
+            
+            if( $("#name-form input:text").val() == '' ) {
+                  
+            }
+            else {
+                
+                $("ul.name-list").append('<li>'+($('#name-form input').val())+'</li>');
+                
+            }
+
+            $("#name-form input:text").val(''); //czyści po kliknięciu input
+            
+        });  
 
     });
 
