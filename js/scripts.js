@@ -31,7 +31,7 @@
 
         //T01Z04
         
-        $("#name-form .add-btn").click(function(){ 
+        $("#name-form .add-btn").on("click", function(){ 
           
             // $( "form" ).submit(function( event ) {
             //   event.preventDefault();
