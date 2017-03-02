@@ -39,21 +39,32 @@
           
             // $( "form" ).submit(function( event ) {
             //   event.preventDefault();
-            // });                       
+            // });  
             
-            if( $("#name-form input#name").val() == '' ) { //<- spraawdzenie czy pole input id="name" jest puste
+            var name = $(":text[name='name']"); // zmienna zwracająca input name                   
+            
+            if( $(name).val() === '' ) { // sprawdzenie czy pole input id="name" jest puste
+                
                 // jeśli jest - nic się nie dzieje
             }
             else {
                 
                 // jeśli nie jest - zostaje wstawiona jego zawartość do ul jako kolejny punkt na liście
                 
-                $("ul.name-list").append('<li>'+($('#name-form input#name').val())+'</li>'); 
+                //zmienna zwracająca element listy z zawartością treści wpisanej w pole input
+                var listElement = $("<li></li>", {
+
+                    text: $(name).val()
+                    
+                });
+            
+                
+                $("ul.name-list").append(listElement); // utworzenie listy
 
                 
             }
 
-            $("#name-form input#name").val(''); //czyści po kliknięciu input
+            $(name).val(''); //czyści input po kliknięciu 
             
         });  
 
