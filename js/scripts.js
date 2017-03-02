@@ -55,11 +55,15 @@
                 var listElement = $("<li></li>", {
 
                     text: $(name).val()
-                    
+
                 });
+
+                
             
                 
-                $("ul.name-list").append(listElement); // utworzenie listy
+                // $("ul.name-list").append(listElement); // utworzenie listy
+                
+                listElement.appendTo(".name-list");
 
                 
             }
