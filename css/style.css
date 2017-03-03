@@ -32,11 +32,48 @@ ul.menu li > a
     color: #000;
 }
 
-ul.menu li > a:hover {
-	text-decoration:underline;
+ul.menu li > a:hover
+{
+    text-decoration: underline;
 }
 
-.menu-btn, .add-btn, .button{
-	cursor:pointer;
+.menu-btn,
+.add-btn,
+.button
+{
+    cursor: pointer;
 }
 
+ul.output
+{
+    width:800px;
+    list-style: none;
+
+    border: 1px solid #999;
+}
+
+ul.output li
+{
+    margin-left: -40px;
+    padding: 10px;
+}
+
+ul.output li:nth-child(odd)
+{
+    background: #f0f0f0;
+}
+
+span.name {
+    width: 250px;
+    display: inline-block;
+}
+
+span.username {
+    width: 150px;
+    display: inline-block;
+}
+
+span.phone {
+    width: 200px;
+    display: inline-block;
+}

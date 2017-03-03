@@ -75,6 +75,8 @@
         var button = $(".button"); // zmienna odnosząca do elementu o podanej klasie
             output = $("#output"); // zmienna odnosząca do elementu o podanym id
 
+        $(".output").hide();
+
         button.on("click", function() { // po kliknięciu
 
             $.ajax({ // korzystamy z metody ajax
@@ -85,17 +87,24 @@
                 success: function(response){ // w razie sukcesu ma zadziałać taka funkcja
 
 
-                    console.log(response);
+                    console.log(response);        
 
         
                     $.each(response, function(i,value){ // weź wszystkie odpowiedzi wg indexu i wartości
 
+                        var name = '<span class="name">' + value.name + '</span>';
+                        var username = '<span class="username">' + value.username + '</span>';
+                        var phone = '<span class="phone">' + value.phone + '</span>';
+                        var email = '<span class="email">' + value.email + '</span>';
+
                         $("<li></li>",{ // stwórz obiekt li
                             "id":value.id, // nadaj mu id o wartości id z danych
-                            "text": value.name + ', ' + value.username + ', ' + value.phone + ', ' + value.email // wstaw do niego wymienione wartości danych
-                        }).appendTo(output); // to wszystko wstaw do środka elementu output
+                            // "text": value.name + ', ' + value.username + ', ' + value.phone + ', ' + value.email // wstaw do niego wymienione wartości danych
+                        }).append(name, username, phone, email).appendTo(output); // to wszystko wstaw do środka elementu output
 
                     });                
+
+                    $(".output").show();
                 },
 
                 error: function(errorThrown) { // w razie błędu ma się to zadziać
