@@ -42,8 +42,7 @@
           
             // $( "form" ).submit(function( event ) {
             //   event.preventDefault();
-            // });        
-                              
+            // });                                      
             
             if( $.trim(field.val()) === "" ) { // metoda .trim usuwa białe znaki z przodu i z tyłu, sprawdzenie czy pole input id="name" jest puste
                 
@@ -59,13 +58,11 @@
 
                     text: $(field).val()
 
-                });               
-            
+                });                           
                 
                 // $("ul.name-list").append(listElement); // utworzenie listy
                 
                 listElement.appendTo(".name-list");
-
                 
             }
 
@@ -75,30 +72,44 @@
 
         //T1Z05
         
-        // var button = $(".button");
-        //     output = $("#output");
+        var button = $(".button"); // zmienna odnosząca do elementu o podanej klasie
+            output = $("#output"); // zmienna odnosząca do elementu o podanym id
 
-        // button.on("click", function() {
-        
+        button.on("click", function() { // po kliknięciu
 
-        // // var clientId = $.get("http://code.eduweb.pl/kurs-jquery/get_id");
+            $.ajax({ // korzystamy z metody ajax
+                url: "https://jsonplaceholder.typicode.com/users", //wysyłamy zapytanie pod podany url
+                method: "GET", // metodą GET
+                dataType: "JSON", // wymuszamy zwrot danych jako text 
+               
+                success: function(response){ // w razie sukcesu ma zadziałać taka funkcja
 
 
-        //     $.when(
-        //         $.get("https://jsonplaceholder.typicode.com/users/get_name.php"),
-        //         $.get("https://jsonplaceholder.typicode.com/users/get_username.php"),
-        //         $.get("https://jsonplaceholder.typicode.com/users/get_phone.php"),
-        //         $.get("https://jsonplaceholder.typicode.com/users/get_email.php")
-
-        //     ).then(function(name, username, phone, email) {
-
-        //         output.text(name[0] + "," + username[0] + "," + phone[0] + "," + email[0]);
-
-        //     });
-        // });
+                    console.log(response);
 
         
+                    $.each(response, function(i,value){ // weź wszystkie odpowiedzi wg indexu i wartości
+
+                        $("<li></li>",{ // stwórz obiekt li
+                            "id":value.id, // nadaj mu id o wartości id z danych
+                            "text": value.name + ', ' + value.username + ', ' + value.phone + ', ' + value.email // wstaw do niego wymienione wartości danych
+                        }).appendTo(output); // to wszystko wstaw do środka elementu output
+
+                    });                
+                },
+
+                error: function(errorThrown) { // w razie błędu ma się to zadziać
+                    output.text ("Przepraszam, wystąpił błąd");
+                }
+            });    
         
+        });
+
+
+        
+
+
+
 
     });
 
