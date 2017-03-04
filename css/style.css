@@ -46,7 +46,8 @@ ul.menu li > a:hover
 
 ul.output
 {
-    width:800px;
+    width: 800px;
+
     list-style: none;
 
     border: 1px solid #999;
@@ -63,17 +64,23 @@ ul.output li:nth-child(odd)
     background: #f0f0f0;
 }
 
-span.name {
+span.name
+{
+    display: inline-block;
+
     width: 250px;
-    display: inline-block;
 }
 
-span.username {
+span.username
+{
+    display: inline-block;
+
     width: 150px;
-    display: inline-block;
 }
 
-span.phone {
-    width: 200px;
+span.phone
+{
     display: inline-block;
+
+    width: 200px;
 }

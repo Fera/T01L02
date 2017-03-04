@@ -16,12 +16,10 @@
 
         var paginationItemNotSpan = $(".pagination-item").not("span"); // wszystkie elementy z podaną klasą nie będące spanami
 
-        //allDivGrid.hl();
-
-       
+        //allDivGrid.hl();       
 
 
-        //T01Z03
+        //T01Z03 - tydzien 1, zadanie 3
         
         // menu rozwijane
         
@@ -31,18 +29,16 @@
 
         }); 
 
-        //T01Z04
-        var form = $("#name-form")
+        //T01Z04 - tydzien 1, zadanie 4
+        
+        var form = $("#name-form");
             field = $(form).find("input#name"); // zmienna zwracająca input name 
             button = $("button.add-btn");
 
         $(button).on("click", function(){ 
 
             // wyłączenie natywnej funkcji buttona - zastąpiłam je przez type="button" w index.html
-          
-            // $( "form" ).submit(function( event ) {
-            //   event.preventDefault();
-            // });                                      
+                                               
             
             if( $.trim(field.val()) === "" ) { // metoda .trim usuwa białe znaki z przodu i z tyłu, sprawdzenie czy pole input id="name" jest puste
                 
@@ -70,7 +66,7 @@
             
         });  
 
-        //T1Z05
+        //T1Z05 - tydzien 1, zadanie 5
         
         var button = $(".button"); // zmienna odnosząca do elementu o podanej klasie
             output = $("#output"); // zmienna odnosząca do elementu o podanym id
@@ -86,10 +82,8 @@
                
                 success: function(response){ // w razie sukcesu ma zadziałać taka funkcja
 
+                    console.log(response);     
 
-                    console.log(response);        
-
-        
                     $.each(response, function(i,value){ // weź wszystkie odpowiedzi wg indexu i wartości
 
                         var name = '<span class="name">' + value.name + '</span>';
@@ -110,16 +104,7 @@
                 error: function(errorThrown) { // w razie błędu ma się to zadziać
                     output.text ("Przepraszam, wystąpił błąd");
                 }
-            });    
-        
+            });         
         });
-
-
-        
-
-
-
-
     });
-
 })(jQuery);
