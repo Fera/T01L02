@@ -71,9 +71,11 @@
         var button = $(".button"); // zmienna odnosząca do elementu o podanej klasie
             output = $("#output"); // zmienna odnosząca do elementu o podanym id
 
-        $(".output").hide();
+        $(output).hide();
 
         button.on("click", function() { // po kliknięciu
+
+
 
             $.ajax({ // korzystamy z metody ajax
                 url: "https://jsonplaceholder.typicode.com/users", //wysyłamy zapytanie pod podany url
@@ -98,7 +100,9 @@
 
                     });                
 
-                    $(".output").show();
+                    $(output).show();
+                    $(button).attr('disabled', true).text("DANE POBRANO");
+
                 },
 
                 error: function(errorThrown) { // w razie błędu ma się to zadziać
