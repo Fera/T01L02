@@ -58,7 +58,7 @@
                 
                 // $("ul.name-list").append(listElement); // utworzenie listy
                 
-                listElement.appendTo(".name-list");
+                listElement.fadeIn(500).appendTo(".name-list");
                 
             }
 
