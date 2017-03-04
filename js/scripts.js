@@ -106,7 +106,7 @@
                 },
 
                 error: function(errorThrown) { // w razie błędu ma się to zadziać
-                    output.html("<li>Przepraszamy, wystąpił błąd</li>");
+                    output.show().html("<li>Przepraszamy, wystąpił błąd</li>");
                     $(button).text("POBIERZ JESZCZE RAZ");
                 }
             });         
