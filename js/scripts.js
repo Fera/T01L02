@@ -25,7 +25,7 @@
         
         $(".menu-btn").on("click", function(){ 
 
-            $(".nav").toggle("slow");
+            $(".nav").stop().toggle("slow");
 
         }); 
 
