@@ -106,7 +106,7 @@
                 },
 
                 error: function(errorThrown) { // w razie błędu ma się to zadziać
-                    output.text ("Przepraszam, wystąpił błąd");
+                    output.html("<li>Przepraszamy, wystąpił błąd</li>");
                 }
             });         
         });
