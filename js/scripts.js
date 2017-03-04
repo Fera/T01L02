@@ -70,7 +70,7 @@
         
         var button = $(".button"); // zmienna odnosząca do elementu o podanej klasie
             output = $("#output"); // zmienna odnosząca do elementu o podanym id
-            btnclear = $(".clear");
+            btnclear = $(".clear"); // zmienn odnosząca do elementu o podanej klasie
 
         $(output).hide();
 
@@ -107,8 +107,8 @@
                 },
 
                 error: function(errorThrown) { // w razie błędu ma się to zadziać
-                    $(output).show().html("<li>Przepraszamy, wystąpił błąd</li>");
-                    $(button).text("POBIERZ JESZCZE RAZ");
+                    $(output).show().html("<li class='error'>Przepraszamy, wystąpił błąd</li>"); // pojawi się pozycja na liście z informacją o błędzie
+                    $(button).text("SPRÓBUJ JESZCZE RAZ");
                 }
             });         
         });

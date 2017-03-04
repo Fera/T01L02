@@ -84,3 +84,7 @@ span.phone
 
     width: 200px;
 }
+
+.error {
+    color:#ff0000;
+}
