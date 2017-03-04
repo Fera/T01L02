@@ -76,7 +76,7 @@
 
         button.on("click", function() { // po kliknięciu
 
-
+            var that = $(this);
 
             $.ajax({ // korzystamy z metody ajax
                 url: "https://jsonplaceholder.typicode.com/users", //wysyłamy zapytanie pod podany url
@@ -101,14 +101,14 @@
 
                     });                
 
-                    $(output).show();  // pokaż output
-                    $(button).attr('disabled', true).text("DANE POBRANO"); // wyłącz przycisk pobierania danych i zmień mu text              
+                    $(output).fadeIn(500, 'linear');  // pokaż output
+                    that.attr('disabled', true).text("DANE POBRANO"); // wyłącz przycisk pobierania danych i zmień mu text              
 
                 },
 
                 error: function(errorThrown) { // w razie błędu ma się to zadziać
-                    $(output).show().html("<li class='error'>Przepraszamy, wystąpił błąd</li>"); // pojawi się pozycja na liście z informacją o błędzie
-                    $(button).text("SPRÓBUJ JESZCZE RAZ"); // zmien tekst buttona
+                    $(output).fadeIn(500, 'linear').html("<li class='error'>Przepraszamy, wystąpił błąd</li>"); // pojawi się pozycja na liście z informacją o błędzie
+                    that.text("SPRÓBUJ JESZCZE RAZ"); // zmien tekst buttona
                 }
             });         
         });
@@ -116,7 +116,7 @@
         // czyszczenie listy po kliknięciu na button clear i włączenie przycisku pobierania danych
 
         $(btnclear).on("click", function(){
-            $(output).empty().hide();
+            $(output).empty().fadeOut(500, 'linear');
             $(button).attr('disabled', false).text("POBIERZ DANE");
         });
 
