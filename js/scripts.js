@@ -70,6 +70,7 @@
         
         var button = $(".button"); // zmienna odnosząca do elementu o podanej klasie
             output = $("#output"); // zmienna odnosząca do elementu o podanym id
+            btnclear = $(".clear");
 
         $(output).hide();
 
@@ -100,16 +101,22 @@
 
                     });                
 
-                    $(output).show();
-                    $(button).attr('disabled', true).text("DANE POBRANO");
+                    $(output).show();  
+                    $(button).attr('disabled', true).text("DANE POBRANO");                
 
                 },
 
                 error: function(errorThrown) { // w razie błędu ma się to zadziać
-                    output.show().html("<li>Przepraszamy, wystąpił błąd</li>");
+                    $(output).show().html("<li>Przepraszamy, wystąpił błąd</li>");
                     $(button).text("POBIERZ JESZCZE RAZ");
                 }
             });         
         });
+
+        $(btnclear).on("click", function(){
+            $(output).empty().hide();
+            $(button).attr('disabled', false).text("POBIERZ DANE");
+        });
+
     });
 })(jQuery);
