@@ -105,11 +105,11 @@
                     
 
                     $.map(response, function(val, i){
-                        var name = '<span class="name">' + val.name + '</span>';
-                            username = '<span class="username">' + val.username + '</span>';
-                            phone = '<span class="phone">' + val.phone + '</span>';
-                            email = '<span class="email">' + val.email + '</span>';
-
+                        var name = '<span class="name">' + val.name + '</span>',
+                            username = '<span class="username">' + val.username + '</span>',
+                            phone = '<span class="phone">' + val.phone + '</span>',
+                            email = '<span class="email">' + val.email + '</span>',
+                            
                             data = name + username + phone + email;
 
                         if ($(name, username, phone, email) === ''){
